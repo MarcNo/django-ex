@@ -12,9 +12,10 @@ def index(request):
     hostname = os.getenv('HOSTNAME', 'unknown')
     PageView.objects.create(hostname=hostname)
 
-    print("hostname: " + hostname)
-    print("database: " + database.info())
-    print("-------------------")
+    print("nozell -------------------")
+    print("nozell hostname: " + hostname)
+    print("nozell database: " + repr(database.info()))
+    print("nozell -------------------")
     return render(request, 'welcome/index.html', {
         'hostname': hostname,
         'database': database.info(),
